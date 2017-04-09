@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'WebCounter/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'WebCounter/tableStyle.css' %}">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+</head>
+<body>
+<div class="smart-green">
+    <h3>来自：{{ yourClass }}</h3>
+    <h3>班的：{{ yourName }} 同学,你好！</h3>
+    <h3>已修学分：{{ sumCredit }}</h3>
+    <h3>必修GPA：{{ requiredGPA }}</h3>
+    <h3>选修GPA：{{ electiveGPA }}</h3>
+    <h3>总GPA为：{{ totalGPA }}</h3>
+</div>
+<table border="1">
+    <tr>
+        <td>课程号</td>
+        <td>课程名</td>
+        <td>学  分</td>
+        <td>属  性</td>
+        <td>成  绩</td>
+    </tr>
+    {% for lesson in yourLesson %}
+    <tr>
+        {% for detail in lesson  %}
+            <td>{{ detail }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

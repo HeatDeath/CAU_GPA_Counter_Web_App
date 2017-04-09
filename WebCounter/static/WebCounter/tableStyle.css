@@ -1,0 +1,13 @@
+table {
+    margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+	background: powderblue;
+    padding: 5px 30px 20px 30px;
+	font: 18px Arial, Helvetica, sans-serif;
+	color: #666;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+    text-align: center;
+}

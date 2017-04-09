@@ -1,0 +1,32 @@
+{% load staticfiles %}
+{% comment %}<script type="text/javascript" src="../../static/WebCounter/js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="../../static/WebCounter/js/WebCounter_ajax.js"></script>{% endcomment %}
+<link rel="stylesheet" type="text/css" href="{% static 'WebCounter/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>GPA查询</title>
+</head>
+<body>
+<div id="query-form">
+    <form action="{% url 'WebCounter:result' %}" method="post" class="smart-green">
+        {% csrf_token %}
+        <h1>中国农业大学GPA自助查询系统</h1>
+        <p>输入教务处账号密码，查询绩点</p>
+        <label>
+            <span>学号 :</span>
+            <input id="user" type="text" name="user" placeholder="请输入学号"/>
+        </label>
+        <label>
+            <span>密码 :</span>
+            <input id="password" type="password" name="password" placeholder="请输入密码"/>
+        </label>
+        <label>
+            <input id="query-btn" type="submit" class="button" value="查询"/>
+        </label>
+    </form>
+</div>
+</body>
+</html>
